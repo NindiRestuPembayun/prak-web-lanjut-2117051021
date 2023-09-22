@@ -2,11 +2,12 @@
 <html>
 <head>
     <title>Form Mahasiswa</title>
+    <!-- Sertakan file CSS Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h2 class="mt-5">Form Data Diri</h2>
+        <h2 class="mt-5">Form Data Mahasiswa</h2>
         <form action="<?= base_url('user/store') ?>" method="POST">
             <div class="form-group">
                 <label for="nama">Nama:</label>

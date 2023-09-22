@@ -1,47 +1,58 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Saya</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
+<style>
+    body {
+        background-color: #CCCC99; /* warna latar belakang  */
+    }
 
-        .profile-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
+    .rounded-img {
+        border-radius: 50%;
+        /* width: 200px;
+        height: 200px; */
+        display: block;
+        margin: 0 auto; /* Untuk mengatur gambar ke tengah */
+    
+    }
+    .center-text {
+        text-align: center;
+    }
 
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background-image: url('images/profilwl.jpeg'); 
-            background-size: cover;
-        }
+    .profile-info {
+        margin-top: 10px;
+        text-align: center;
+    }
 
-        .profile-info {
-            text-align: left;
-        }
-    </style>
+    .card {
+        text-align: center;
+        border: 5px solid #ccc;
+        padding: 20px;
+        max-width: 300px;
+        margin: 100px auto; /* Untuk mengatur card ke tengah */
+        background-color: #FFEBEB; /* warna latar belakang card */
+    }
+</style>
 </head>
 <body>
-    <div class="profile-container">
-        <div class="profile-image"></div>
-        <div class="profile-info">
-            <p>Nama: Nindi Restu Pembayun</p>
-            <p>Kelas: C</p>
-            <p>NPM: 2117051021</p>
-        </div>
+<div class="container">
+    <div class="card" data-tilt>
+        <img src="<?php echo base_url('profilwl.jpeg'); ?>" class="rounded-img" width="150px">
+        <h2>Profile</h2>
+        <table class="profile-info">
+            <tr>
+                <td>Nama:</td>
+                <td><?=$nama?></td>
+            </tr>
+            <tr>
+                <td>Kelas:</td>
+                <td><?=$kelas?></td>
+            </tr>
+            <tr>
+                <td>NPM:</td>
+                <td><?=$npm?></td>
+            </tr>
+        </table>
     </div>
+</div>
 </body>
 </html>
