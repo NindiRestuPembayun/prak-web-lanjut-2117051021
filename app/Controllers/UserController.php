@@ -55,7 +55,7 @@ public function store()
 {
     // validasi Input
     if(!$this->validate([
-        'nama' => 'required|is_unique[user.nama]',
+        'nama' => 'required',
         'npm' => 'required|is_unique[user.npm]'  
         
     ])) {
