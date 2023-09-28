@@ -3,7 +3,7 @@
 <head>
 <style>
     body {
-        background-color: #CCCC99; /* warna latar belakang  */
+        background-color: #CCCC99; 
     }
 
     .rounded-img {
@@ -11,8 +11,7 @@
         /* width: 200px;
         height: 200px; */
         display: block;
-        margin: 0 auto; /* Untuk mengatur gambar ke tengah */
-    
+        margin: 0 auto; 
     }
     .center-text {
         text-align: center;
@@ -28,8 +27,8 @@
         border: 5px solid #ccc;
         padding: 20px;
         max-width: 300px;
-        margin: 100px auto; /* Untuk mengatur card ke tengah */
-        background-color: #FFEBEB; /* warna latar belakang card */
+        margin: 100px auto; 
+        background-color: #FFEBEB; 
     }
 </style>
 </head>
