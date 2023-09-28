@@ -23,8 +23,13 @@
             <div class="form-group">
                 <label for="npm">NPM:</label>
                 <input type="text" class="form-control <?= session('validation') && session('validation')->hasError('npm') ? 'is-invalid' : '' ?>" id="npm" name="npm" value=<?= old('npm')?>>
-            </div>
+                <div class="invalid-feedback">
+                <?php if (session('validation') && session('validation')->hasError('npm')) : ?>
 
+                <?= session('validation')->getError('npm'); ?>
+                </div>
+               <?php endif; ?>
+            </div>
 
             <div class="form-group">
                 <label for="kelas">Kelas:</label>

@@ -61,7 +61,7 @@ public function store()
     ])) {
         $validation = \Config\Services::validation();
         // dd($validation);
-        return redirect()->to('/user/create_user')->withInput()->with('validation', $validation);
+         return redirect()->to(base_url('/user/create'))->withInput()->with('validation', $validation);
          
      }
 
