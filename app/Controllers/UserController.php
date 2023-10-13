@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UserModel;
+
 use App\Models\kelasModel;
 
 class UserController extends BaseController
@@ -47,26 +48,7 @@ public function create(){
 
     
     session();   
-    // $kelas = [
-    //     [
-    //         'id'=>1,
-    //         'nama_kelas'=>'A'
-    //     ],
-    //     [
-    //         'id'=>2,
-    //         'nama_kelas'=>'B'
-    //     ],
-    //     [
-    //         'id'=>3,
-    //         'nama_kelas'=>'C'
-    //     ],
-    //     [
-    //         'id'=>4,
-    //         'nama_kelas'=>'D'
-    //     ],
-
-        
-    // ];
+ 
 
     $data = [
         'title' => 'Create User',
@@ -81,7 +63,17 @@ public function create(){
 }
 public function store()
 {
-    // validasi Input
+    $path = 'assets/uploads/img/';
+
+    $foto = $this->request->getFile('foto');
+
+    $name =$foto->getRandomName();
+
+    if ($foto->move($path, $name)) {
+       $foto = base_url($path . $name);
+    }
+
+
     if(!$this->validate([
         'nama' => 'required',
         'npm' => 'required|is_unique[user.npm]'  
@@ -94,15 +86,22 @@ public function store()
      }
 
 
-
-
     $this->userModel->saveUser([
-        'nama' => $this->request->getVar('nama'),
-        'id_kelas' => $this->request->getVar('kelas'),
-        'npm' => $this->request->getVar('npm'),
+        'nama'      => $this->request->getVar('nama'),
+        'id_kelas'  => $this->request->getVar('kelas'),
+        'npm'       => $this->request->getVar('npm'),
+        'foto'      => $foto
     ]);
     return redirect()->to('/user');
 }
+public function show($id){
+    $user = $this->userModel->getUser($id);
 
+    $data = [
+        'title' => 'Profile',
+        'user'  => $user,
+    ];
 
+    return view('profile', $data);
+}
 }
