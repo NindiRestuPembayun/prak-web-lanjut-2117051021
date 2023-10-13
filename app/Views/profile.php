@@ -4,20 +4,21 @@
 <body>
 <div class="container">
     <div class="card" data-tilt>
-        <img src="<?php echo base_url('profilwl.jpeg'); ?>" class="rounded-img" width="150px">
+        <img src="<?=$user['foto']?>" class="rounded-img" width="150px">
         <h2>Profile</h2>
         <table class="profile-info">
             <tr>
                 <td>Nama:</td>
-                <td><?=$nama?></td>
+                <td><?=$user['nama']?></td>
             </tr>
             <tr>
                 <td>Kelas:</td>
-                <td><?=$kelas?></td>
+                <td><?=$user['nama_kelas']?></td>
             </tr>
             <tr>
                 <td>NPM:</td>
-                <td><?=$npm?></td>
+                <td><?=$user['npm']?></td>
+
             </tr>
         </table>
     </div>

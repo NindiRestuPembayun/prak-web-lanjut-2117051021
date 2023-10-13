@@ -14,7 +14,7 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'npm', 'id_kelas','created_at', 'updated_at', 'deleted_at'];
+    protected $allowedFields    = ['nama', 'npm', 'id_kelas','foto','created_at', 'updated_at', 'deleted_at'];
 
     // Dates
     protected $useTimestamps = false;
@@ -42,9 +42,16 @@ class UserModel extends Model
 
 
 
-    public function getUser()
+    public function getUser($id = null)
     {
-        return $this->join('kelas', 'kelas.id=user.id_kelas')->findAll();
+        if ($id != null) {
+            return $this->select('user.*, kelas.nama_kelas')
+                ->join('kelas', 'kelas.id = user.id_kelas')->find($id);
+        }
+        return $this->select('user.*, kelas.nama_kelas')
+        ->join('kelas', 'kelas.id=user.id_kelas')
+        ->orderBy('id', 'ASC')
+        ->findAll();
     }
 
 

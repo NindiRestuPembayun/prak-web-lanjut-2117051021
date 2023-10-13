@@ -1,9 +1,9 @@
 <?= $this->extend('layouts/app') ?>
 <?= $this->section('content') ?>
 <div class="container">
-    <div class="row">
-
         <h3 class='text-center py-3'>Tabel Mahasiswa</h3>
+        <a href="<?= base_url('user/create') ?>">Tambah data</a>
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -26,6 +26,7 @@
                     <td><?= $user['npm'] ?></td>
                     <td><?= $user['nama_kelas'] ?></td>
                     <td>
+                    <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
                         <a class="btn btn-warning" href="">Edit</a>
                         <a class="btn btn-danger" href="">Hapus</a>
                     </td>
@@ -35,7 +36,7 @@
             ?>
         </tbody>
         </table>
-    </div>
+
 </div>
 <?= $this->endSection() ?>
 
