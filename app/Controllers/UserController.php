@@ -38,15 +38,8 @@ public function profile($nama = "", $kelas = "", $npm = "")
     return view('profile', $data);
 }
 public function create(){
-    $kelasModel = new KelasModel();
 
     $kelas = $this->kelasModel->getKelas();
-    $data = [
-        'kelas' => $kelas,
-    ];
-    return view('create_user', $data);
-
-    
     session();   
  
 
@@ -55,10 +48,6 @@ public function create(){
         'kelas' => $kelas,
     ];
 
-    $data=[
-        'kelas'=>$kelas,
-        'validation' => \Config\Services::validation()
-    ];
     return view('create_user',$data);
 }
 public function store()

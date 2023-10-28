@@ -1,7 +1,7 @@
 <?=$this->extend('layouts/app')?>
 <?=$this->section('content')?>
 
-    <div class="container" style="background-color: #f0f0f0; padding: 20px; border-radius: 20px;">
+    <div class="container" style="background-color: #f0f0f0; padding: 20px; border-radius: 20px; margin-top: 20px;">
         <h2 class="mt-5">Form Data Mahasiswa</h2>
         <form action="<?= base_url('user/store') ?>" method="POST" enctype="multipart/form-data">
             <div class="form-group">
