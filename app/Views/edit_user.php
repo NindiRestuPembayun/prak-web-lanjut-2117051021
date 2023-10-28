@@ -1,7 +1,7 @@
 <?=$this->extend('layouts/app')?>
 <?=$this->section('content')?>
 
-    <div class="container" style="background-color: #f0f0f0; padding: 20px; border-radius: 20px;">
+    <div class="container" style="background-color: #f0f0f0; padding: 20px; border-radius: 20px; margin-top: 30px;">
         <h2 class="mt-5">Form Data Mahasiswa</h2>
         <form action="<?= base_url('user/' . $user['id']) ?>" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT">
@@ -44,7 +44,7 @@
             </div>
             
             <?= csrf_field() ?>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
             
         </form>
     </div>
